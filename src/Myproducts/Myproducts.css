@@ -11,6 +11,11 @@
     align-items: center;
     justify-content: center;
     background-color: slategray;
+    background:url(./../../public/Images/Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 .time{
     margin-top: 2em;
@@ -23,6 +28,7 @@
     background-color: rgb(164, 185, 206);
     font-size: large;
     font-weight: lighter;
+    
 
 }
 
