@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.footer{
+    background-color: black;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    color: white;
+    padding: .7em;
+    width: 100%;
+}
+.paragraph{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:300px) {
+    .paragraph{
+        font-weight: lighter;
+        font-size: small;
+       
+    }
+    .footer{
+        padding: .5em;
+    }
+    
+}
