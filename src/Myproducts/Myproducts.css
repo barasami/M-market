@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.products{
+    margin-top: .9em;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    justify-content: center;
+    background-color: slategray;
+}
+.time{
+    margin-top: 2em;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    padding: .4em;
+    justify-content: center;
+    background-color: rgb(164, 185, 206);
+    font-size: large;
+    font-weight: lighter;
+
+}
+
