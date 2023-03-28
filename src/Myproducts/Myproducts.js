@@ -15,8 +15,12 @@ function Myproducts() {
     const{id,name,from}=singles
     return(
       <div key={id}>
-       {name}
-       {from}
+        <div>
+          {name}
+        </div>
+        <div>
+          {from}
+        </div>
       </div>
     )
   })
@@ -27,7 +31,9 @@ function Myproducts() {
         <Time/>
       </div>
       <div className='products'>
-        {Mymap}
+        <div className='product'>
+          {Mymap}
+        </div>
       </div>
     </>
   )
