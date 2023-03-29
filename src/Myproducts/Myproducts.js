@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Myproducts.css'
 import Time from '../Timing/Time'
 import { CoolData } from '../Data/Mydata'
+import Paper from '@mui/material/Paper';
 
 
 function Myproducts() {
@@ -12,16 +13,13 @@ function Myproducts() {
   },[])
   
   const Mymap=data.map((singles)=>{
-    const{id,name,from}=singles
+    const{id,name,cost,image}=singles
     return(
-      <div key={id} >
-        <div>
-          {name}
-        </div>
-        <div>
-          {from}
-        </div>
-      </div>
+      <Paper elevation={3} key={id} className='docs'>
+        <img src={image} alt={name} className='img'/>
+        {name}
+        ${cost}
+      </Paper>
     )
   })
  

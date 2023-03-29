@@ -31,4 +31,18 @@
     
 
 }
+.docs{
+    padding: .4em;
+    background: transparent;
+    
+}
+.product{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.img{
+    height: 2em;
+    width: 2em;
+    image-rendering: crisp-edges;
+}
 
