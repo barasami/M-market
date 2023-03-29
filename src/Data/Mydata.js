@@ -20,6 +20,7 @@ export const CoolData=[
     {
         id:4,
         name:'Deploy your site',
+        image:'../../public/Images/hosting.jpg',
         cost:90
     },
     {
@@ -35,6 +36,13 @@ export const CoolData=[
     {
         id:7,
         name:'Get your portfolio',
+        image:'../../public/Images/portfolio.jpg',
         cost:130
+    },
+    {
+        id:8,
+        name:'Make your Site Responsive',
+        image:'../../public/Images/responsive.jpg',
+        cost:110
     },
 ]
