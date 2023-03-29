@@ -14,7 +14,7 @@ function Myproducts() {
   const Mymap=data.map((singles)=>{
     const{id,name,from}=singles
     return(
-      <div key={id}>
+      <div key={id} >
         <div>
           {name}
         </div>
