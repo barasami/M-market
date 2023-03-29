@@ -26,11 +26,13 @@ export const CoolData=[
     {
         id:5,
         name:'Get a simple Business Website',
+        image:'../../public/Images/simple.jpg',
         cost:180
     },
     {
         id:6,
         name:'Get a complex Business Website ',
+        image:'../../public/Images/complex.jpg',
         cost:250
     },
     {
