@@ -19,7 +19,7 @@ export const CoolData=[
     },
     {
         id:4,
-        name:'Deploy your site',
+        name:'Deploy your Javascript site',
         image:'../Images/hosting.jpg',
         cost:90
     },

@@ -8,14 +8,15 @@
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     background-color: slategray;
     background:url(./../../public/Images/Background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    margin-bottom: 4em;
 }
 .time{
     margin-top: 2em;
@@ -33,16 +34,20 @@
 }
 .docs{
     padding: .4em;
-    background: transparent;
-    
+  
 }
 .product{
     margin-top: 1em;
     margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    
+    
 }
 .img{
-    height: 2em;
-    width: 2em;
+    height: 8em;
+    width: 8em;
     image-rendering: crisp-edges;
 }
 

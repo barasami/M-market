@@ -3,6 +3,9 @@ import './Myproducts.css'
 import Time from '../Timing/Time'
 import { CoolData } from '../Data/Mydata'
 import Paper from '@mui/material/Paper';
+import { Grid, Typography } from '@mui/material';
+import { Container } from '@mui/system';
+
 
 
 function Myproducts() {
@@ -15,11 +18,19 @@ function Myproducts() {
   const Mymap=data.map((singles)=>{
     const{id,name,cost,image}=singles
     return(
-      <Paper elevation={3} key={id} className='docs'>
-        <img src={image} alt={name} className='img'/>
-        {name}
-        ${cost}
-      </Paper>
+      <Grid item  lg={3} sm={6} xs={12}  key={id}  className='docs'>
+        <Paper elevation={3}>
+          <Typography mt={2}>
+            <img src={image} alt={name} className='img'/>
+          </Typography>
+          <Typography variant='h9' p={2} ml={1} color='seagreen'>
+            {name}
+          </Typography>
+          <Typography variant='h10' color='blueviolet' p={2} ml={2}>
+            ${cost}
+          </Typography>
+       </Paper>
+      </Grid>
     )
   })
  
@@ -29,10 +40,13 @@ function Myproducts() {
         <Time/>
       </div>
       <div className='products'>
-        <div className='product'>
-          {Mymap}
-        </div>
+        <Container>
+          <Grid container spacing={1}>
+            {Mymap}
+          </Grid>
+        </Container>
       </div>
+      
     </>
   )
 }
