@@ -32,22 +32,28 @@
     
 
 }
+.pep{
+    height: 95%;
+}
 .docs{
-    padding: .4em;
+    padding: .1em;
   
 }
-.product{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    
-    
+.head{
+    margin-top: .5em;
+    color: mediumvioletred;
+    text-transform: capitalize;
+    margin-left: .3em;
+
+}
+.cost{
+    color: darkblue;
+    margin-top: .1em;
+    margin-left: .1em;
 }
 .img{
-    height: 8em;
-    width: 8em;
+    height: 75%;
+    width: 100%;
     image-rendering: crisp-edges;
 }
 

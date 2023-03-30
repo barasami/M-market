@@ -19,16 +19,16 @@ function Myproducts() {
     const{id,name,cost,image}=singles
     return(
       <Grid item  lg={3} sm={6} xs={12}  key={id}  className='docs'>
-        <Paper elevation={3}>
-          <Typography mt={2}>
+        <Paper elevation={3} className='pep'>
+          <Typography mt={2} className='img'>
             <img src={image} alt={name} className='img'/>
           </Typography>
-          <Typography variant='h9' p={2} ml={1} color='seagreen'>
+          <div className='head'>
             {name}
-          </Typography>
-          <Typography variant='h10' color='blueviolet' p={2} ml={2}>
-            ${cost}
-          </Typography>
+          </div>
+          <div className='cost'>
+            Cost ${cost}
+          </div>
        </Paper>
       </Grid>
     )
