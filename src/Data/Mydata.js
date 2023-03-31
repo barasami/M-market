@@ -13,7 +13,7 @@ export const CoolData=[
     },
     {
         id:3,
-        name:'Add HTML to your page/Edit your HTML Page',
+        name:'Add or Edit your HTML Page',
         image:'../Images/html.jpg',
         cost:70
     },
@@ -31,7 +31,7 @@ export const CoolData=[
     },
     {
         id:6,
-        name:'Get a complex Business Website ',
+        name:'Get a complex Website ',
         image:'../Images/complex.jpg',
         cost:250
     },

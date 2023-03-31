@@ -20,7 +20,7 @@ function Myproducts() {
     return(
       <Grid item  lg={3} sm={6} xs={12}  key={id}  className='docs'>
         <Paper elevation={3} className='pep'>
-          <Typography mt={1} className='img'>
+          <Typography mt={1} className='imges'>
             <img src={image} alt={name} className='img'/>
           </Typography>
           <div className='head'>
