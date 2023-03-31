@@ -3,6 +3,7 @@ import './Nav.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import Login from '../Loginpage/Login';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Nav() {
     const[menu,setMenu]=useState(false)
@@ -21,6 +22,7 @@ function Nav() {
                 <li><a href='#'>Products</a></li>
                 <li><a href='#'>Contact</a></li>
                 <li><a href='#'>Login</a></li>
+                <li><a href='#'><ShoppingCartIcon className='cart'/></a></li>
             </ul>
         </div>
     </nav>
