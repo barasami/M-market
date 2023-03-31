@@ -8,14 +8,6 @@
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
-    /* align-items: center;
-    justify-content: center; */
-    background-color: slategray;
-    background:url(./../../public/Images/Background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
     margin-bottom: 4em;
 }
 .time{
@@ -28,19 +20,18 @@
     justify-content: center;
     background-color: rgb(164, 185, 206);
     font-size: large;
-    font-weight: lighter;
-    
+    font-weight: bolder;  
 
 }
 .pep{
-    height: 95%;
+    height: 25em;
 }
 .docs{
     padding: .1em;
-  
+
 }
 .head{
-    margin-top: .5em;
+    margin-top: .1em;
     color: mediumvioletred;
     text-transform: capitalize;
     margin-left: .3em;
@@ -49,11 +40,25 @@
 .cost{
     color: darkblue;
     margin-top: .1em;
-    margin-left: .1em;
+    margin-left: .3em;
+    font-weight:bold ;
 }
 .img{
     height: 75%;
     width: 100%;
     image-rendering: crisp-edges;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+}
+.mybtn{
+    padding: .4em;
+    margin: .4em;
+    border: 1px;
+    border-radius: 6px;
+    background-color: rgb(164, 185, 206);
+    color: white;
+    width: 50%;
 }
 
