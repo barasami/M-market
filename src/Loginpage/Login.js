@@ -1,9 +1,19 @@
 import React from 'react'
 import './Login.css'
+import TextField from '@mui/material/TextField';
 
 function Login() {
   return (
-    <div>LOG IN</div>
+    <div className='login'>
+      <form className='form'>
+        <TextField
+          label="Size"
+          id="outlined-size-small"
+          defaultValue="Small"
+          size="small"
+        />
+      </form>
+    </div>
   )
 }
 

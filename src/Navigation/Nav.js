@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Nav.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import Login from '../Loginpage/Login';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Nav() {
