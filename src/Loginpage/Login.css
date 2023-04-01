@@ -8,3 +8,54 @@
     align-items: center;
     justify-content: center;
 }
+.form{
+    display: flex;
+   margin-top: 16em;
+   margin-bottom: 16em;
+   align-items: center;
+   justify-content: center;
+
+}
+.username{
+    padding: .4em;
+
+}
+.password{
+    padding: .4em;
+
+}
+.buttons{
+    padding: .4em;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+.user{
+    padding: .5em;
+}
+.psw{
+    padding: .5em;
+}
+.btn{
+    padding: .5em;
+    text-transform: capitalize;
+    color: white;
+    border:none;
+    background-color: black;
+    width: 35%;
+    border-radius: 2px;  
+}
+.market{
+    margin-bottom: .9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mytitle{
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
