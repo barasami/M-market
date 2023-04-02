@@ -20,6 +20,9 @@ function Login() {
             <button className='btn'>Login</button>
             <button className='btn'>Register</button>
           </div>
+          <div className='psswdreset'>
+            <p>Forgot password?</p>
+          </div>
        </Paper>
       </form>
     </div>
