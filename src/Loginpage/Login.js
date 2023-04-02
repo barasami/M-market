@@ -11,17 +11,17 @@ function Login() {
             <p className='mytitle'>M-MARKET</p>
           </div>
           <div className='username'>
-            <input type='text' placeholder='Username' className='user'/>
+            <input type='text' placeholder='Username' className='user' required/>
           </div>
           <div className='password'>
-            <input type='password' placeholder='Password' className='psw'/>
+            <input type='password' placeholder='Password' className='psw' required/>
           </div>
           <div className='buttons'>
             <button className='btn'>Login</button>
             <button className='btn'>Register</button>
           </div>
           <div className='psswdreset'>
-            <p>Forgot password?</p>
+            <p className='preset'>Forgot password?</p>
           </div>
        </Paper>
       </form>

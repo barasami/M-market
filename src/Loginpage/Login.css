@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 .form{
     display: flex;
@@ -14,6 +15,7 @@
    margin-bottom: 16em;
    align-items: center;
    justify-content: center;
+   position: fixed;
 
 }
 .username{
@@ -71,5 +73,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.preset{
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .1em;
 }
 
