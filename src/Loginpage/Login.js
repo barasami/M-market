@@ -17,8 +17,8 @@ function Login() {
             <input type='password' placeholder='Password' className='psw' required/>
           </div>
           <div className='buttons'>
-            <button className='btn'>Login</button>
-            <button className='btn'>Register</button>
+            <button className='btns'>Login</button>
+            <button className='btns'>Register</button>
           </div>
           <div className='psswdreset'>
             <p className='preset'>Forgot password?</p>
