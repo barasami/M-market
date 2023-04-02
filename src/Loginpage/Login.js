@@ -1,12 +1,12 @@
 import React from 'react'
 import './Login.css'
-
+import Paper from '@mui/material/Paper';
 
 function Login() {
   return (
     <div className='login'>
       <form className='form'>
-       <div>
+       <Paper elevation={2} className='loginpaper'>
           <div className='market'>
             <p className='mytitle'>M-MARKET</p>
           </div>
@@ -20,7 +20,7 @@ function Login() {
             <button className='btn'>Login</button>
             <button className='btn'>Register</button>
           </div>
-       </div>
+       </Paper>
       </form>
     </div>
   )
