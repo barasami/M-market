@@ -3,7 +3,9 @@ import Nav from './Navigation/Nav';
 import Footer from './Footer/Footer';
 import Myproducts from './Myproducts/Myproducts';
 import Login from './Loginpage/Login'
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
+import Contact from './Contactpg/Contact';
+import Cart from './Cart/Cart';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Fragment } from 'react';
 
 
@@ -12,8 +14,12 @@ function App() {
     <Router>
       <Fragment>
         <Nav/>
-        {/* <Login/> */}
-        <Myproducts/>
+          <Routes>
+            <Route path='/products' element={<Myproducts/>}/>
+            <Route path='/' element={<Login/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+          </Routes>
         <Footer/> 
       </Fragment>
     </Router>

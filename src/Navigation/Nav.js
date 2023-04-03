@@ -3,6 +3,7 @@ import './Nav.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     const[menu,setMenu]=useState(false)
@@ -18,14 +19,15 @@ function Nav() {
         </div>
         <div className={menu ? 'Dontshow' : 'show'}>
             <ul>
-                <li><a href='#'>Products</a></li>
-                <li><a href='#'>Contact</a></li>
-                <li><a href='#'>Login</a></li>
-                <li><a href='#'><ShoppingCartIcon className='cart'/></a></li>
+                <li><a href='#'><Link to='/products'>Products</Link></a></li>
+                <li><a href='#'><Link to='/contact'>Contact</Link></a></li>
+                <li><a href='#'><Link to='/'>Login</Link></a></li>
+                <li><a href='#'></a><Link to='/cart'><ShoppingCartIcon className='cart'/></Link></li>
             </ul>
         </div>
     </nav>
   )
 }
+
 
 export default Nav
