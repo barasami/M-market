@@ -5,6 +5,7 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 
+
 function Nav() {
     const[menu,setMenu]=useState(false)
     const changeMe=()=>{
@@ -19,9 +20,8 @@ function Nav() {
         </div>
         <div className={menu ? 'Dontshow' : 'show'}>
             <ul>
-                <li><Link to='/products'>Products</Link></li>
+                <li><Link to='/'>Products</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
-                <li><Link to='/'>Login</Link></li>
                 <li><Link to='/cart'><ShoppingCartIcon className='cart'/></Link></li>
             </ul>
         </div>

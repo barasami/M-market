@@ -1,11 +1,18 @@
 import React from 'react'
 import './Login.css'
 import Paper from '@mui/material/Paper';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../Store/Auth_slice';
 
 function Login() {
+  const dispatch=useDispatch()
+  const handleSubmit=(e)=>{
+    e.preventdefault()
+    dispatch(authActions.login())
+  }
   return (
     <div className='login'>
-      <form className='form'>
+      <form className='form'onSubmit={handleSubmit}>
        <Paper elevation={2} className='loginpaper'>
           <div className='market'>
             <p className='mytitle'>M-MARKET</p>

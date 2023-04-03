@@ -5,18 +5,29 @@ import { CoolData } from '../Data/Mydata'
 import Paper from '@mui/material/Paper';
 import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../Store/Cart_slice';
 
 
 
 function Myproducts() {
+  const dispatch=useDispatch();
   const[data,setData]=useState([])
 
   useEffect(()=>{
    setData(CoolData)
   },[])
+
   
   const Mymap=data.map((singles)=>{
     const{id,name,cost,image}=singles
+    const addTocart=()=>{
+      dispatch(cartActions.addtoCart({
+        name,
+        id,
+        cost,
+      }))
+    }
     return(
       <Grid item  lg={3} sm={6} xs={12}  key={id}  className='docs'>
         <Paper elevation={3} className='pep'>
@@ -27,11 +38,10 @@ function Myproducts() {
             {name}
           </div>
           <div className='cost'>
-            Cost ${cost}
+            ${cost}
           </div>
           <div className='btn'>
-            <button className='mybtn'>Add</button>
-            <button className='mybtn'>Remove</button>
+            <button className='mybtn' onClick={addTocart} >Add To Cart</button>
           </div>
        </Paper>
       </Grid>
