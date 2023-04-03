@@ -19,10 +19,10 @@ function Nav() {
         </div>
         <div className={menu ? 'Dontshow' : 'show'}>
             <ul>
-                <li><a href='#'><Link to='/products'>Products</Link></a></li>
-                <li><a href='#'><Link to='/contact'>Contact</Link></a></li>
-                <li><a href='#'><Link to='/'>Login</Link></a></li>
-                <li><a href='#'></a><Link to='/cart'><ShoppingCartIcon className='cart'/></Link></li>
+                <li><Link to='/products'>Products</Link></li>
+                <li><Link to='/contact'>Contact</Link></li>
+                <li><Link to='/'>Login</Link></li>
+                <li><Link to='/cart'><ShoppingCartIcon className='cart'/></Link></li>
             </ul>
         </div>
     </nav>
