@@ -44,6 +44,24 @@
 .cart{
     height: .2em;
 }
+.cartItem{
+    position: absolute;
+    top: -0.01em;
+    right: -0.01em;
+    border-radius: 50%;
+    background-color: white;
+    height: 1.2rem;
+    width: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total{
+    margin-bottom: 0px;
+    color: black;
+    font-weight: bold;
+
+}
 
 @media screen and (max-width:600px) {
     .mymenu{
