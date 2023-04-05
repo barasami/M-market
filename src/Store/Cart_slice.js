@@ -4,7 +4,7 @@ const cartSlice=createSlice({
     name:'cart',
     initialState:{
         list:[],
-        quantity:0,
+        Totalquantity:0,
         showcart:false
 
     },
@@ -24,7 +24,8 @@ const cartSlice=createSlice({
                     quantity:1,
                     name:newItem.name,
                     totalCost:newItem.cost
-                })
+                });
+                state.Totalquantity++
             }
         },
         removefromCart (state) {},
