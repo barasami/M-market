@@ -8,15 +8,19 @@ import { Container } from '@mui/system';
 import { useDispatch} from 'react-redux';
 import { cartActions } from '../Store/Cart_slice';
 import Cart from '../Cart/Cart';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
 function Myproducts() {
   const dispatch=useDispatch();
   const[data,setData]=useState([])
+  const[loading,setloading]=useState(false)
 
   useEffect(()=>{
-   setData(CoolData)
+    setloading(true)
+    setData(CoolData)
+    setloading(false)
   },[])
 
   
@@ -56,9 +60,11 @@ function Myproducts() {
       </div>
       <div className='products'>
         <Container>
+          {loading ? <CircularProgress color='#2c387e' className='circular'/> :
           <Grid container spacing={1}>
-            {Mymap}
+           {Mymap}
           </Grid>
+          }
         </Container>
       </div>
       <div className='mycart'>
