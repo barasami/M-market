@@ -71,7 +71,7 @@ function Myproducts() {
       <div className='mycart'>
         <Cart/>
       </div>
-      <div className='mycart'>
+      <div className='mycartitems'>
         <Cartitm/>
       </div>
       

@@ -39,6 +39,21 @@
     font-family: cursive;
 
 }
+.mycartitems{
+    margin-bottom: 4em;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    padding: .03em;
+    justify-content: center;
+    background-color: rgb(9, 28, 47);
+    font-size: medium;
+    font-weight: lighter; 
+    color: white; 
+    font-family: cursive;
+
+}
 .circular{
     top: 50%;
     left: 50%;

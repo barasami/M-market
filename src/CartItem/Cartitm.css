@@ -3,3 +3,15 @@
     padding: 0px;
     margin: 0px;
 }
+.table{
+    padding: .4em;
+}
+.tr{
+    padding: .5em;
+}
+.headt{
+    padding: 1em;
+}
+.bodyd{
+    padding: .5em;
+}

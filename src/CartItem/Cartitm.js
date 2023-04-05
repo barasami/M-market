@@ -1,22 +1,29 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './Cartitm.css'
-import { Paper } from '@mui/material'
+
 
 function Cartitm() {
     const items=useSelector(state=>state.cart.list)
+    const show=useSelector(state=>state.cart.showcart)
     let coolitems=items.map((item)=>{
         const{id,cost,quantity,name}=item
         return(
-            <Paper key={id}>
-               <table>
-                    <tr>
-                        <td>{name}</td>
-                        <td>{quantity}</td>
-                        <td>${cost}</td>
-                    </tr>
-               </table>
-            </Paper>
+            <>
+                {show && 
+                    <table key={id} className='table'>
+                        <tr>
+                            <td className='bodyd'>{name}</td>
+                            <td>{' '}</td>
+                            <td className='bodyd'>{quantity}</td>
+                            <td className='bodyd'>${cost}</td>
+                            <td className='bodyd'> - </td>
+                            <td className='bodyd'> + </td>
+                        </tr>
+              
+                    </table>
+                }
+            </>
         )
     })
   return (
