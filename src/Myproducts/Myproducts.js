@@ -9,6 +9,7 @@ import { useDispatch} from 'react-redux';
 import { cartActions } from '../Store/Cart_slice';
 import Cart from '../Cart/Cart';
 import CircularProgress from '@mui/material/CircularProgress';
+import Cartitm from '../CartItem/Cartitm';
 
 
 
@@ -69,6 +70,9 @@ function Myproducts() {
       </div>
       <div className='mycart'>
         <Cart/>
+      </div>
+      <div className='mycart'>
+        <Cartitm/>
       </div>
       
     </>
