@@ -5,8 +5,9 @@ import { CoolData } from '../Data/Mydata'
 import Paper from '@mui/material/Paper';
 import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { cartActions } from '../Store/Cart_slice';
+import Cart from '../Cart/Cart';
 
 
 
@@ -59,6 +60,9 @@ function Myproducts() {
             {Mymap}
           </Grid>
         </Container>
+      </div>
+      <div className='mycart'>
+        <Cart/>
       </div>
       
     </>
