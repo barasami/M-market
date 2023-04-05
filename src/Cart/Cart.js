@@ -1,5 +1,5 @@
 import React from 'react'
-import './Cart'
+import './Cart.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../Store/Cart_slice'
 
@@ -15,7 +15,8 @@ function Cart() {
   return (
     <div className='CartItem'>
       <div className='items'>
-        <p className='item' onClick={showcart}>Cart : {amount} items</p>
+        <p className='item'>Cart : {amount} items</p>
+        <button onClick={showcart} className='button'>Show Items</button>
       </div>
     </div>
   )

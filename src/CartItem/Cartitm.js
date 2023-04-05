@@ -17,8 +17,8 @@ function Cartitm() {
                             <td>{' '}</td>
                             <td className='bodyd'>{quantity}</td>
                             <td className='bodyd'>${cost}</td>
-                            <td className='bodyd'> - </td>
-                            <td className='bodyd'> + </td>
+                            <td className='minus'> - </td>
+                            <td className='add'> + </td>
                         </tr>
               
                     </table>
