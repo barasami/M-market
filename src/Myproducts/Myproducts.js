@@ -5,7 +5,7 @@ import { CoolData } from '../Data/Mydata'
 import Paper from '@mui/material/Paper';
 import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { cartActions } from '../Store/Cart_slice';
 import Cart from '../Cart/Cart';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -17,12 +17,19 @@ function Myproducts() {
   const dispatch=useDispatch();
   const[data,setData]=useState([])
   const[loading,setloading]=useState(false)
+  
 
   useEffect(()=>{
     setloading(true)
     setData(CoolData)
     setloading(false)
   },[])
+
+  let total=0
+  const myitems=useSelector(state=>state.cart.list)
+  myitems.map((price)=>{
+    return total +=price.totalCost
+  })
 
   
   const Mymap=data.map((singles)=>{
@@ -34,6 +41,7 @@ function Myproducts() {
         cost,
       }))
     }
+    
     return(
       <Grid item  lg={3} sm={6} xs={12}  key={id}  className='docs'>
         <Paper elevation={3} className='pep'>
@@ -73,6 +81,9 @@ function Myproducts() {
       </div>
       <div className='mycartitems'>
         <Cartitm/>
+      </div>
+      <div className='mycartTotal'>
+        <p className='tPrice'>Total: ${total}</p>
       </div>
       
     </>
