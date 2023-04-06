@@ -1,20 +1,32 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './Cartitm.css'
+import { cartActions } from '../Store/Cart_slice'
 
 
 function Cartitm() {
+    const dispatch=useDispatch()
     const items=useSelector(state=>state.cart.list)
     const show=useSelector(state=>state.cart.showcart)
 
-    const increment=()=>{
-
-    }
-    const decrement=()=>{
-
-    }
+   
     let coolitems=items.map((item)=>{
         const{id,cost,quantity,name,totalCost}=item
+        const increment=()=>{
+            dispatch(cartActions.addtoCart({
+                name,
+                id,
+                cost,
+                quantity,
+                totalCost,
+
+            }))
+
+        }
+        const decrement=()=>{
+            dispatch(cartActions.removefromCart(id))
+    
+        }
         return(
             <>
                 {show && 
