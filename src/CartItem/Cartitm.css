@@ -14,6 +14,7 @@
 }
 .bodyd{
     padding: .5em;
+    margin-bottom: .1em;
 }
 .minus{
     padding: .5em;
@@ -24,4 +25,17 @@
     padding: .5em;
     font-weight: bolder;
     font-size: larger;
+}
+.coolbtn{
+    padding: .3em;
+    color: magenta;
+    border: 1px solid magenta;
+    border-radius: 2px;
+    border: none;
+}
+.total{
+    padding: .5em;
+    margin-bottom: .1em;
+    color: magenta;
+
 }

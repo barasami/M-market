@@ -3,21 +3,21 @@
     margin: 0px;
     box-sizing: border-box;
 }
-/* .items{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .2em;
+.items{
+    color:fuchsia;
+    font-weight: bold;
    
-} */
+}
 .button{
     padding: .2em;
     border: none;
-    border: 1px solid white;
     border-radius: 5px;
     font-family: cursive;
     color: white;
     background-color: rgb(9, 28, 47);
+}
+.button:hover,.button:active{
+    border: 1px solid white;
 }
 
 
