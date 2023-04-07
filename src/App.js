@@ -6,16 +6,26 @@ import Contact from './Contactpg/Contact';
 import Cart from './Cart/Cart';
 import Login from './Loginpage/Login';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 
 
 function App() {
+  const cart=useSelector(state=>state.cart)
   const isloggedIn=useSelector(state=>state.auth.isloggedIn);
-  console.log(isloggedIn);
-  const cartItems=useSelector((state)=>state.cart.list)
-  console.log(cartItems);
+  useEffect(()=>{
+    const dataSend=async()=>{
+      const resource=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json',{
+        method:'PUT',
+        body:JSON.stringify(cart)
+      })
+
+      const mydata=await resource.json()
+
+    }
+    dataSend();
+  },[cart])
   return (
     <Router>
       <Fragment>
