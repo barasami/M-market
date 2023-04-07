@@ -3,13 +3,19 @@ import './Nav.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../Store/Auth_slice';
 
 
 
 function Nav() {
+    const dispatch=useDispatch();
     const[menu,setMenu]=useState(false)
     const changeMe=()=>{
         setMenu(!menu)
+    }
+    const logoutHandler=()=>{
+        dispatch(authActions.logout())
     }
     
   return (
@@ -22,6 +28,7 @@ function Nav() {
             <ul>
                 <li><Link to='/'>Products</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
+                <li><Link to='/logout' onClick={logoutHandler}>Logout</Link></li>
             </ul>
         </div>
     </nav>

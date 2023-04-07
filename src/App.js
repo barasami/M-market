@@ -4,9 +4,11 @@ import Footer from './Footer/Footer';
 import Myproducts from './Myproducts/Myproducts';
 import Contact from './Contactpg/Contact';
 import Cart from './Cart/Cart';
+import Login from './Loginpage/Login';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+
 
 
 function App() {
@@ -19,9 +21,11 @@ function App() {
       <Fragment>
         <Nav/>
           <Routes>
+            {/* <Route path='/' element={isloggedIn && <Login/>}/> */}
             <Route path='/' element={isloggedIn && <Myproducts/>}/>
             <Route path='/contact' element={isloggedIn && <Contact/>}/>
             <Route path='/cart' element={isloggedIn && <Cart/>}/>
+            <Route path='/logout' element={isloggedIn && <Login/>}/>
           </Routes>
         <Footer/> 
       </Fragment>

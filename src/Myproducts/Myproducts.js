@@ -27,10 +27,9 @@ function Myproducts() {
 
   let total=0
   const myitems=useSelector(state=>state.cart.list)
-  myitems.map((price)=>{
-    return total +=price.totalCost
+  myitems.map((item)=>{
+    return total += item.totalCost;
   })
-
   
   const Mymap=data.map((singles)=>{
     const{id,name,cost,image}=singles
