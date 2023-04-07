@@ -8,6 +8,7 @@ import Login from './Loginpage/Login';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Notify from './Alert/Notify';
 
 
 
@@ -30,6 +31,7 @@ function App() {
     <Router>
       <Fragment>
         <Nav/>
+          <Notify type='success'message='succeeded bro'/>
           <Routes>
             {/* <Route path='/' element={isloggedIn && <Login/>}/> */}
             <Route path='/' element={isloggedIn && <Myproducts/>}/>
