@@ -7,31 +7,50 @@ import Cart from './Cart/Cart';
 import Login from './Loginpage/Login';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Fragment, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Notify from './Alert/Notify';
+import { notifyActions } from './Store/Notify_slice';
 
 
 
 function App() {
+  const dispatch=useDispatch()
   const cart=useSelector(state=>state.cart)
   const isloggedIn=useSelector(state=>state.auth.isloggedIn);
+  const notifying=useSelector(state=>state.notice.notification)
   useEffect(()=>{
     const dataSend=async()=>{
+      dispatch(notifyActions.showNotification({
+        open:true,
+        message:'Sending Your request',
+        type:'warning'
+      }))
       const resource=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json',{
         method:'PUT',
         body:JSON.stringify(cart)
       })
 
       const mydata=await resource.json()
+      dispatch(notifyActions.showNotification({
+        open:true,
+        message:'Request sent successfully',
+        type:'success'
+      }))
 
     }
-    dataSend();
+    dataSend().catch(err=>{
+      dispatch(notifyActions.showNotification({
+        open:true,
+        message:'Request failed',
+        type:'error'
+      }))
+    });
   },[cart])
   return (
     <Router>
       <Fragment>
         <Nav/>
-          <Notify type='success'message='succeeded bro'/>
+          <Notify type={notifying.type} message={notifying.message}/>
           <Routes>
             {/* <Route path='/' element={isloggedIn && <Login/>}/> */}
             <Route path='/' element={isloggedIn && <Myproducts/>}/>

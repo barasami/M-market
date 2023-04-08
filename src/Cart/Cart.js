@@ -16,7 +16,7 @@ function Cart() {
     <div className='CartItem'>
       <div className='items'>
         <p className='item'>Cart : {amount} items</p>
-        <button onClick={showcart} className='button'>Show Items</button>
+        <button onClick={showcart} className='button'>Show Cart</button>
       </div>
     </div>
   )
