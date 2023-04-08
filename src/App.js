@@ -9,7 +9,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Notify from './Alert/Notify';
-import { notifyActions } from './Store/Notify_slice';
+import { sendCatData } from './Store/Cart_slice';
 
 
 
@@ -18,39 +18,21 @@ function App() {
   const cart=useSelector(state=>state.cart)
   const isloggedIn=useSelector(state=>state.auth.isloggedIn);
   const notifying=useSelector(state=>state.notice.notification)
-  let firstApper=true
+  // let firstApper=true
   useEffect(()=>{
-    if(firstApper){
-      firstApper=false
-      return;
-    }
-    const dataSend=async()=>{
-      dispatch(notifyActions.showNotification({
-        open:true,
-        message:'Sending Your request',
-        type:'warning'
-      }))
-      const resource=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json',{
-        method:'PUT',
-        body:JSON.stringify(cart)
-      })
-
-      const mydata=await resource.json()
-      dispatch(notifyActions.showNotification({
-        open:true,
-        message:'Request sent successfully',
-        type:'success'
-      }))
-
-    }
-    dataSend().catch(err=>{
-      dispatch(notifyActions.showNotification({
-        open:true,
-        message:'Request failed',
-        type:'error'
-      }))
-    });
-  },[cart])
+    // if(firstApper){
+    //   firstApper=false
+    //   return;
+    // }
+    dispatch(sendCatData(cart))
+    // dataSend().catch(err=>{
+    //   dispatch(notifyActions.showNotification({
+    //     open:true,
+    //     message:'Request failed',
+    //     type:'error'
+    //   }))
+    // });
+  },[cart,dispatch])
   return (
     <Router>
       <Fragment>

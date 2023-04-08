@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notifyActions } from "./Notify_slice";
+
+
 
 const cartSlice=createSlice({
     name:'cart',
@@ -46,6 +49,44 @@ const cartSlice=createSlice({
 
     }
 })
+
+export const sendCatData=(cart)=>{
+    return async (dispatch)=>{
+        dispatch(notifyActions.showNotification({
+            open:true,
+            message:'Sending Your request',
+            type:'warning'
+        }))
+        const dataSend=async()=>{
+      
+            const resource=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json',{
+              method:'PUT',
+              body:JSON.stringify(cart)
+            })
+      
+            const mydata=await resource.json()
+            dispatch(notifyActions.showNotification({
+              open:true,
+              message:'Request sent successfully',
+              type:'success'
+            }))
+      
+        }
+        try{
+            await dataSend()
+        }
+        catch (err){
+            dispatch(notifyActions.showNotification({
+                open:true,
+                message:'Request failed',
+                type:'error'
+              }))
+
+        }
+
+    }
+
+}
 
 export const cartActions=cartSlice.actions;
 export default cartSlice
