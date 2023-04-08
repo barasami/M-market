@@ -18,7 +18,12 @@ function App() {
   const cart=useSelector(state=>state.cart)
   const isloggedIn=useSelector(state=>state.auth.isloggedIn);
   const notifying=useSelector(state=>state.notice.notification)
+  let firstApper=true
   useEffect(()=>{
+    if(firstApper){
+      firstApper=false
+      return;
+    }
     const dataSend=async()=>{
       dispatch(notifyActions.showNotification({
         open:true,
@@ -50,7 +55,7 @@ function App() {
     <Router>
       <Fragment>
         <Nav/>
-          <Notify type={notifying.type} message={notifying.message}/>
+          {notifying && <Notify type={notifying.type} message={notifying.message}/>}
           <Routes>
             {/* <Route path='/' element={isloggedIn && <Login/>}/> */}
             <Route path='/' element={isloggedIn && <Myproducts/>}/>
