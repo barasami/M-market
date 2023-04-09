@@ -19,7 +19,6 @@ function Cartitm() {
                 cost,
                 quantity,
                 totalCost,
-
             }))
 
         }

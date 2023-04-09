@@ -30,6 +30,8 @@ function Myproducts() {
   myitems?.map((item)=>{
     return total += item.totalCost;
   })
+
+  console.log(myitems);
   
   const Mymap=data.map((singles)=>{
     const{id,name,cost,image}=singles

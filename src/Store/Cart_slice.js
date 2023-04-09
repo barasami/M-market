@@ -21,14 +21,14 @@ const cartSlice=createSlice({
         addtoCart (state,action) {
             state.modify=true
             const newItem=action.payload
-            const itExists=state.list.find((item)=>item.id === newItem.id)
+            const itExists=state.list?.find((item)=>item.id === newItem.id)
 
             if(itExists){
                 itExists.quantity++;
                 itExists.totalCost += newItem.cost;
             }
             else{
-                state.list.push({
+                state.list?.push({
                     id:newItem.id,
                     cost:newItem.cost,
                     quantity:1,
@@ -88,12 +88,10 @@ export const sendCatData=(cart)=>{
             type:'warning'
         }))
         const dataSend=async()=>{
-      
             const resource=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json',{
               method:'PUT',
               body:JSON.stringify(cart)
             })
-      
             const mydata=await resource.json()
             dispatch(notifyActions.showNotification({
               open:true,
