@@ -10,7 +10,7 @@ function Cartitm() {
     const show=useSelector(state=>state.cart.showcart)
 
    
-    let coolitems=items.map((item)=>{
+    let coolitems=items?.map((item)=>{
         const{id,cost,quantity,name,totalCost}=item
         const increment=()=>{
             dispatch(cartActions.addtoCart({

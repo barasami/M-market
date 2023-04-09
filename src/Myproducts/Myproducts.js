@@ -27,7 +27,7 @@ function Myproducts() {
 
   let total=0
   const myitems=useSelector(state=>state.cart.list)
-  myitems.map((item)=>{
+  myitems?.map((item)=>{
     return total += item.totalCost;
   })
   
