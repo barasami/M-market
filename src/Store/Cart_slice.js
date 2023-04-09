@@ -3,16 +3,23 @@ import { notifyActions } from "./Notify_slice";
 
 
 
+
 const cartSlice=createSlice({
     name:'cart',
     initialState:{
         list:[],
         Totalquantity:0,
-        showcart:false
+        showcart:false,
+        modify:false,
 
     },
     reducers:{
+        changeData (state,action) {
+            state.Totalquantity=action.payload.totalCost
+            state.list=action.payload.list
+        },
         addtoCart (state,action) {
+            state.modify=true
             const newItem=action.payload
             const itExists=state.list.find((item)=>item.id === newItem.id)
 
@@ -32,6 +39,7 @@ const cartSlice=createSlice({
             }
         },
         removefromCart (state,action) {
+            state.modify=true
             const id=action.payload
             const existing=state.list.find(item=>item.id === id)
             if(existing.quantity === 1){
@@ -49,6 +57,28 @@ const cartSlice=createSlice({
 
     }
 })
+
+export const fetchData=()=>{
+    return async (dispatch)=>{
+        const fetchallData= async()=>{
+            const res=await fetch('https://reachme-ded7b-default-rtdb.firebaseio.com/cartItems.json')
+            const data= await res.json()
+            return data;
+        }
+        try{
+            const myCart=await fetchallData()
+            dispatch(cartActions.changeData(myCart))
+        }
+        catch (err){
+            dispatch(notifyActions.showNotification({
+                open:true,
+                message:'Request failed',
+                type:'error'
+            }))
+
+        }
+    }
+}
 
 export const sendCatData=(cart)=>{
     return async (dispatch)=>{
@@ -80,7 +110,7 @@ export const sendCatData=(cart)=>{
                 open:true,
                 message:'Request failed',
                 type:'error'
-              }))
+            }))
 
         }
 
